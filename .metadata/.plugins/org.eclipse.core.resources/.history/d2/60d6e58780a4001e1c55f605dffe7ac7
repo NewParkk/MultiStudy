@@ -1,0 +1,13 @@
+[forward]
+- 정보 유지 가능 forward(request, response)
+- 주소가 처음에 요청을 받았던 서블릿의 mapping url 출력
+페이지 이동 순서
+http://localhost:8080/step03_move/login.html
+http://localhost:8080/step03_move/check
+
+[redirect]
+- 정보 유지 불가능
+- 주소가 마지막에 재요청을 했던 서블릿의 mapping url 출력
+페이지 이동 순서
+http://localhost:8080/step03_move/login.html
+http://localhost:8080/step03_move/invalid
