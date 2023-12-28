@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;step00.FirstSevlet&apos; to &apos;FirstServlet&apos;&#x0D;&#x0A;- Original project: &apos;step01_basic&apos;&#x0D;&#x0A;- Original element: &apos;step00.FirstSevlet&apos;&#x0D;&#x0A;- Renamed element: &apos;step00.FirstServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FirstSevlet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;step00{FirstSevlet.java[FirstSevlet" matchStrategy="1" name="FirstServlet" qualified="false" references="true" similarDeclarations="false" stamp="1703642673606" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step02_el</title>
+</head>
+<body>
+	<%
+		Cookie cookie = new Cookie("id","dev");
+		response.addCookie(cookie);	
+	%>
+
+
+	<!--  dev 문자열 출력하기 -->
+	1. 쿠키데이터 출력 : ${cookie.id.value} <br/>
+	2. 쿠키데이터 출력 : <button onclick="location.href='cookie-data'">클릭</button>
+	<!-- 
+		클릭 버튼-> /cookie-data(서블릿 이름 CookieData)
+				-> 쿠키 생성 name : study, value : web
+				-> step02_result.jsp web 결과를 출력
+	 -->
+	 
+</body>
+</html>

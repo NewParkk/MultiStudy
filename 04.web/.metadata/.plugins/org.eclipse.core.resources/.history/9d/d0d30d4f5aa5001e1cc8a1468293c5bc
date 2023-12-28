@@ -1,0 +1,28 @@
+package util; 
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class DBUtil {
+	static DataSource ds;
+	
+	static {
+		Context initContext = null;
+		
+		try {
+			Context envContext = (Context) initContext.lookup("java:/comp/env");
+			
+			
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static Connection getConnection() throws SQLException {
+		return null;
+	}
+}

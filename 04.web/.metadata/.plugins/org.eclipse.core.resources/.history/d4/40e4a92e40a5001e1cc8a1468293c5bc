@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step02_el</title>
+</head>
+<body>
+	<%
+		Cookie cookie = new Cookie("id","dev");
+		response.addCookie(cookie);	
+	%>
+
+
+
+	1. 쿠키데이터 출력 : ${cookie.id.value}
+	
+</body>
+</html>

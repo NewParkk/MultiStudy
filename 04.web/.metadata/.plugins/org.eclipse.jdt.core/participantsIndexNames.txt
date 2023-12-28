@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1565959544.index
+\step06_jsp\src
+C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1348186065.index
+\step06_jsp\src
+C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3640832745.index
+\step07_ConnectionPoolBasic_t\src

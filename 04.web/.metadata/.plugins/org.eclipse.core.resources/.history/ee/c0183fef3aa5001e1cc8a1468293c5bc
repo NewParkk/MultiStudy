@@ -1,0 +1,29 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step01_scripting</title>
+</head>
+<body>
+<%-- JSP 주석 --%>
+<%! String name = "dev"; %>
+
+1. <%= name %> <br/>
+2. <% out.println(name); %> <br/>
+<% int age = 28; %>
+3. <%= age %> <br/>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

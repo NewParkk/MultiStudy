@@ -1,0 +1,93 @@
+1. Server
+- Web Server
+  - 웹 브라우저를 클라이언트로부터 HTTP요청을 받아들이고 HTML 문서와 같은 웹 페이지를 반환
+  - 정적 컨텐츠 제공
+  - 동적 컨텐츠를 위한 요청 전달
+  
+- WAS(Web Application Server)
+  - https://tomcat.apache.org/
+  - 인터넷 상에서 HTTP프로토콜을 통해 사용자 컴퓨터나 장치에 어플리케이션을 수행해주는 미들웨어
+  
+- Web Server와 WAS
+  - 기능을 분리하여 서버의 부하 방지
+  - 물리적으로 분리하여 보안 강화
+  - 여러대의 WAS 분산시켜 서비스를 제공
+
+- WAS 세팅
+	- 다운로드 및 준비
+		- https://tomcat.apache.org/download-90.cgi에서 Binary Distributions>Core>zip 파일 다운로드
+		- 00.sw > WAS 폴더 생성 후 하위에 위치
+    - 압축 해제 후 00.dev폴더에 tomcat9로 이름 변경하여 복사하기
+	- 이클립스
+		- Window > Show View > Other > Servers
+		- 'No servers ar available. Click this link to create a new server... 클릭하여 server 등록
+		- server 목록에서 Apache > Tomcat v9.0 Server 선택
+		- Browse에서 00.dev에 있는 tomcat9 폴더 선택
+		- server 목록에서 확인 가능한 Tomcat Server를 실행하여 정상 작동 확인하기
+			(port가 충돌한다는 에러메세지를 확인한다면 윈도우 검색창에서 서비스 > OracleServiceXE > 우클릭하여 중지)
+
+2. Dynamic Web Project 구조
+  src			: 	Java 소스 파일
+  build		: 	자바 클래스 파일(.class)
+  WebContent	: 	.html, .css, .js, JSP, 이미지 파일 등 정적 파일
+  - WEB-INF   :	웹 어플리케이션 설정 관련 파일(클라이언트 접근 불가능)
+  - web.xml	: 	Web Application Deployment Descriptor(배치 설명서, DD 파일)
+          서블릿, 필터, 리스너, 매개변수, Welcome Pages 등 정보 명시
+  - lib		: 	프로젝트에 필요한 자바 아카이브 파일(.jar) 파일
+
+
+3. Servlet
+  - https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServlet.html
+  - 동적 웹 페이지를 만들 때 사용되는 자바 기반의 웹 애플리케이션 프로그래밍 기술
+
+  - 특징
+    - 클라이언트의 Request에 대해 동적으로 작동하는 웹 어플리케이션 컴포넌트
+    - 기존의 정적 웹 프로그램의 문제점을 보완하여 동적인 여러 가지 기능을 제공
+    - JAVA의 스레드를 이용하여 동작
+    - MVC패턴에서 컨트롤러로 이용됨
+
+  - 생명주기 Life Cycle
+	1. 초기화 : init()
+      - 서블릿 요청 시 맨 처음 한 번 호출
+	  - 서블릿 생성 시 초기화 작업
+
+	2. 작업 수행 : doGet(), doPost()
+      - 서블릿 요청 시 매번 호출
+      - 클라이언트가 요청하는 작업 수행
+
+  	3. 종료 : destroy()
+      - 서블릿이 기능을 수행하고 메모리에서 소멸
+      - 서블릿의 마무리 작업
+	
+	- 참고 
+	* Servlet 객체는 최초 요청에 단 한번만 객체가 생성이 된다!
+	client 100 요청 ->
+	servlet 객체 수 	:	HttpServletRequest 객체 수 	:	HttpServletResponse 객체 수
+		?			: 				?				: 				?  
+					: 								: 				
+
+  - API
+	1. HttpServletRequest
+		- client가 전송하는 데이터를 보유하고 서버에 제공하는 기능
+		- 요청하는 client 의 정보를 모든 정보 보유
+		- 회원가입이라 가정
+			: 가입정보를 이 객체로 부터 받아서 검증 후에 db에 insert
+		1. 주요 메소드
+			1. String getParameter("key")
+				- client가 전송하는 web query string 데이터 반환하는 메소드
+		
+	2. HttpServletResponse
+		- 요청한 client에게 응답하는 기능
+		1. 주요 메소드
+			1. setContentType("응답 포맷(MIME type과 인코딩)")
+				- 브라우저에 서비스 하는 데이터 포맷과 인코딩
+			2. PrintWriter getWriter()
+				- 브라우저에 출력
+	
+	3. HttpServlet
+		1. client와 server간의 인터넷상 통신 규약인 http를 이미 완벽에 가깝게 구현한 클래스
+		2. 사용자 정의 servlet 들이 상속
+		3. 주요 메소드
+			1. protected void doGet(HttpServletRequest, HttpServletResponse)
+			2. protected void doPost(HttpServletRequest, HttpServletResponse)
+			

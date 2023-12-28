@@ -1,0 +1,40 @@
+package controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/check")
+public class CheckController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	/*
+		 login.html -> id 전달
+		 -> controller
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String id = request.getParameter("id");
+		
+		if (id != null) {
+			// 쿠키 생성 -> 저장
+			Cookie c1 = new Cookie("cookieId", id);
+			
+			// 쿠키 시간 설정(초)
+			c1.setMaxAge(60 * 60 * 24); // 1일
+			
+			// 클라이언트 시스템 저장
+			response.addCookie(c1);
+			
+			
+			
+			
+			
+		}
+		
+	}
+
+}
