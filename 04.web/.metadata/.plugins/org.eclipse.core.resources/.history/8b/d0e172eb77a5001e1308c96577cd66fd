@@ -34,7 +34,7 @@
 			6단계 - 상태유지 비활성화시 client 시스템의 쿠키정보 삭제
 		6. 저장하는 데이터 타입?
 			- 길이는 제한이 없음! - 키 타입 : 스트링
-		ㅎㅎ
+		
 	2. server 시스템에 데이터 저장
 		https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpSession.html
 		1. 세션 메모리에 상태 유지 데이터 저장
