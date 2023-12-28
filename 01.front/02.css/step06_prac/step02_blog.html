@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Pre Dev</title>
+        <meta name="description" content="Pre Dev">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+        <link href="/css/dev.css" rel="stylesheet">
+        <style>
+
+        </style>
+    </head>
+
+	<body>
+        <header>
+            <div class="wrapper">
+                <a class="logo" href="#hero">Pre Dev</a>
+                <nav>
+                    <button class="btn-menu">Menu</button>
+                    <ul class="main-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#who">WhoAmI</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="hero">
+            <div class="wrapper">
+                <h1>Pre Dev's Life</h1>
+                <p class="hero-date">2023 ~ 2024</p>
+                <p>
+                    이것이 개발자의 삶인가
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="wrapper">
+            <h2>About</h2>
+            <p>
+                개발자가 되기 위한 노력의 흔적들이 담겨 있는 공간입니다.<br />
+                <strong>No Pain, No Gain.</strong>
+            </p>
+            <img src="https://cdn.pixabay.com/photo/2016/09/08/04/12/programmer-1653351_960_720.png" alt="developer">
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="wrapper">
+                <table class="skills-table">
+                    <tr>
+                        <td class="skills-part">Frontend</td>
+                        <td class="skills-content">HTML, CSS, JavaScript, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="skills-part">Backend</td>
+                        <td class="skills-content">Java : Spring Framework, Mybatis, ...</td>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="who" class="wrapper">
+            <h2>Who Am I?!!</h2>
+            <div class="who-list">
+                <div class="who-text">
+                    <h3>Fantastic Pre Dev</h3>
+                    <p>
+                        Challenge, <br /> 
+                        Passionate, <br />
+                        Happy
+                    </p>
+                </div>
+                <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1617087525/noticon/uedixpon6rcvcqbtuf0c.gif" alt="Me">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" action="#">
+                <label>Name</label>
+                <input class="contact-field" type="text" placeholder="Your Name">
+                <label>Email</label>
+                <input class="contact-field" type="email" placeholder="Your Email">
+                <input class="contact-btn" type="submit" value="Contact Me!">
+            </form>
+
+            <div class="footer wrapper">
+                <p>
+                    <small>2023 Pre Dev's Life</small>
+                </p>
+            </div>
+        </section>
+
+        <script>
+            const btn = document.querySelector('.btn-menu');
+            btn.innerHTML = 'test';
+            const nav = document.querySelector('.main-nav');
+            // 버튼을 클릭을 했을 때!
+            // 1. 버튼의 이름이 Menu라고 한다면! -> 숨겨져 있던 
+            //    nav가 화면에 나타나야 함! + Content가 Close로 변경 되어야 함!
+            // 2. 
+
+            btn.addEventListener('click', () => {
+                nav.classList.toggle('open-menu');
+                if(btn.innerHTML === 'Menu') {
+                    nav.classList.add('open-menu');
+                    btn.innerHTML = 'Close';
+                }else {
+                    nav.classList.remove('open-menu');
+                    btn.innerHTML = 'Menu';
+                }
+            });
+
+
+        </script>
+        <script src="/js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+package crawlingProject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Rottentomatoes {
+	public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
+	public static String WEB_DRIVER_PATH = "C:/multi/00.sw/lib/chromedriver.exe";
+	
+	public static void main(String[] args) {
+		
+			
+			
+			// 드라이버 설정
+			System.setProperty("webdriver.chrome.driver", WEB_DRIVER_PATH);
+			
+			// WebDriver
+			WebDriver driver = new ChromeDriver();
+			
+			driver.get("https://www.rottentomatoes.com/");
+			WebDriverWait wait = new WebDriverWait(driver, 3);
+			
+			WebElement movies = driver.findElement(By.cssSelector("#header-main > rt-header-nav > rt-header-nav-item:nth-child(1)"));
+			
+			movies.click();
+			
+			
+			List <WebElement> infos = driver.findElements(By.cssSelector("#main-page-content > div.discovery > div.discovery-grids-container > div > div > div > div > tile-dynamic > a"));
+			
+			for (WebElement info : infos) {
+				String title = info.findElement(By.cssSelector(".p--small")).getText();
+//				System.out.println(title);
+				WebElement tomatoElement = waitForElement(driver, By.cssSelector(".tomatometer-score"));
+				String tomato_rate = tomatoElement.getText();
+				String audience_rate = info.findElement(By.cssSelector(".audience-score span")).getText();
+				String date = info.findElement(By.cssSelector(".smaller")).getText();
+			}
+			
+			
+			
+	}
+	private static WebElement waitForElement(WebDriver driver, By selector) {
+	    WebDriverWait wait = new WebDriverWait(driver, 5);
+	    return wait.until(ExpectedConditions.presenceOfElementLocated(selector));
+	}	
+}

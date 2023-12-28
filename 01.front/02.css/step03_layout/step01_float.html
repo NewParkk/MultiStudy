@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_float</title>
+    <style>
+        /* .pic {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            float: left;
+            margin: 10px;
+        } */
+
+        /* box */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin: 10px;
+            float: left;
+        }
+        .box4 {
+            background: red;
+            /* clear: both; */
+        }
+
+        /* 주의 */
+        .parent {
+            width: 300px;
+            /* height: 120px; */
+            background-color: blue;
+            /* float: left; */
+            /* overflow: auto; */
+        }
+        .child {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin: 10px;
+            float: left;
+        }
+
+        /* clearfix */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Float, Position</h1>
+    <!-- float -->
+    <!-- <article>
+        <div class="pic"></div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet fugit nesciunt nulla asperiores praesentium eos perspiciatis dicta, debitis explicabo nam unde reiciendis exercitationem temporibus odit repellat, aspernatur adipisci nisi?
+    </article>
+
+    <hr /> -->
+    
+    <!-- 주의 -->
+    <!-- <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div> -->
+
+    <!-- <hr /> -->
+    
+    <div class="parent clearfix">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <div class="box box4">4</div>
+
+</body>
+</html>

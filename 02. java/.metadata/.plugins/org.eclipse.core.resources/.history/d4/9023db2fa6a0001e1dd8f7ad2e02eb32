@@ -1,0 +1,64 @@
+package news.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+
+import step01.JsoupTest;
+
+public class NewDAO {
+	
+	// 특정 부서 생성 : INSERT INTO dept VALUES (deptno, dname, loc);
+		public static boolean intsertData(String title, String url){
+			Connection conn = null;
+//				Statement stmt = null;
+			PreparedStatement pstmt = null;
+			
+			
+			
+			try {
+				// 1단계 
+//					Class.forName("com.mysql.cj.jdbc.Driver");
+				// 2단계
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul", "SCOTT", "TIGER");
+//					conn = DBUtill.getConnection();
+				// 3단계 
+				pstmt = conn.prepareStatement("INSERT INTO news VALUES (?, ?)");
+				// 4단계
+//				int result = pstmt.executeUpdate("INSERT INTO dept VALUES(" + JsoupTest.Titlesget()  + " , "
+//																		   + JsoupTest.Linksget() + ")");
+				
+				ArrayList<String> titles = new ArrayList<String>();
+				titles = JsoupTest.Titlesget()
+				for (String title_text : titles) {
+					
+				}
+				
+				
+				
+				
+				pstmt.setString(1, JsoupTest.Titlesget());
+				pstmt.setString(2, JsoupTest.Linksget());				
+				
+				int result = pstmt.executeUpdate();
+				
+				// 5단계
+				if(result != 0) {
+					return true;
+				}
+				// 6단계
+			} finally {
+				
+				pstmt.close();
+				conn.close();
+			}
+			
+			return false;
+		}
+		
+			
+			
+			
+	
+}

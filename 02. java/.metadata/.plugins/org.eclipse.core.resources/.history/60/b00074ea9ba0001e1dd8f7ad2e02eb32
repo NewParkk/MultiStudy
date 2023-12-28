@@ -1,0 +1,12 @@
+package news.dto;
+
+import lombok.*;
+
+@Getter
+
+
+
+public class News {
+	private String title;
+	private String url;
+}

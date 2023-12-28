@@ -1,0 +1,22 @@
+은행 입출금 관리 시스템 프로젝트
+
+dto는 Account(계좌)와 People(사람)으로 구성
+
+계좌의 인스턴스변수
+	People people
+	String accountNum
+	int money
+
+사람의 인스턴스변수
+	String name
+	String id
+	String residentNum	
+
+기능 
+- 전체 계좌 출력
+- Id로 계좌 검색
+- 입금
+- 출금
+- 계좌 생성
+- 계좌 삭제
+- 입출금내역 조회 (제작중)

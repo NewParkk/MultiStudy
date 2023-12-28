@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step05_string</title>
+</head>
+<body>
+    <script>
+        // String
+
+        // indexOf : 지정 문자열을 검색하여 첫번째 결과값의 인덱스를 반환
+        const str = "Hello, JavaScript";
+        console.log(str.indexOf('l'));
+
+
+        // includes : 지정 문자열을 검색하여 존재하는 경우 true 반환
+        console.log(str.includes('Script'));
+
+        // startsWith / endsWith : 지정 문자열로 시작/끝 여부를 반환
+        console.log(str.startsWith('Hello'));
+
+        // charAt : 지정 인덱스의 문자 반환
+        console.log(str.charAt(8));
+
+        // substring : 지정한 범위만큼 문자열 반환
+        const str2 = "Hello, JavaScript";
+        console.log(str2.substring(1, 8));
+
+
+        // slice : substring 같음(단, slice는 음수 사용)
+        console.log(str2.slice(0, -6));
+
+        
+        // toUpperCase / toLowerCase : 대상 문자열을 모두 대/소 문자로 변경
+        console.log(str2.toLocaleUpperCase());
+        console.log(str2.toLocaleLowerCase());
+
+
+        // replace : 지정한 문자열을 원하는 문자열로 변경
+        let replaceTest = "Hello";
+        console.log(replaceTest.replace("Hello", "Python"))
+        console.log(replaceTest);
+        
+        // split : 지정 문자열을 기준으로 모두 분리하여 배열로 반환
+        const splitTest = "I wanna go to home";
+        console.log(splitTest.split(' '));
+
+        //
+        let phone = "010-1234-5678";
+        console.log(phone.split('-')[0]);
+        console.log(phone.slice(0, 3));
+
+
+    </script>
+</body>
+</html>

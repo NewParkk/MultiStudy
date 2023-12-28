@@ -1,0 +1,15 @@
+package dept.dao;
+
+import java.util.ArrayList;
+
+import dept.dto.Dept;
+
+public class DeptDAO {
+	public static ArrayList<Dept> getAllDept() {
+		
+		ArrayList<Dept> deptList = null;
+		deptList = DeptDAO.getAllDept();
+		return null;
+	}
+	
+}

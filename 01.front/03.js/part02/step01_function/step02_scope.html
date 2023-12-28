@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_scope</title>
+</head>
+<body>
+    <h1>Scope</h1>
+
+    <script>
+        // scope : 범위
+        // 전역 변수
+        var x = 20;
+
+        function xFunction() {
+            // 지역 변수
+            var x = 10;
+        }
+        // console.log(x);
+
+        function iFunction() {
+            let i = 1;
+            // console.log(i);
+            for(let i = 0; i < 10; i++)  {
+                // console.log(i);
+            }
+        }
+
+        iFunction();
+
+        // 호이스팅 hoisting
+        // 막을라면 let 쓰셈
+        console.log(myAge);
+        var myAge = 20;
+
+    </script>
+</body>
+</html>

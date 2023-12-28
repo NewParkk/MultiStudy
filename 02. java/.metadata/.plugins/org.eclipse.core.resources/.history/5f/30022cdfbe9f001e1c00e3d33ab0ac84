@@ -1,0 +1,13 @@
+package dept.view;
+
+import dept.controller.DeptController;
+
+public class DeptView {
+	public static void main(String[] args) {
+		
+		DeptController dpcontroller = DeptController.getInstance();
+		// 모든 부서 출력
+		System.out.println(getAll);
+		
+	}
+}

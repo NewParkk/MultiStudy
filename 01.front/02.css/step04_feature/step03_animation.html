@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_animation.html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+        /* 애니메이션 생성 */
+        @keyframes first-animation {
+            0% {
+                width: 100px;
+            }
+            50% {
+                width: 400px;
+                background: green;
+            }
+            100% {
+                width: 200px;
+                background: red;
+            }
+        }
+        
+        /* hover시, 애니메이션 적용 */
+        .box:hover {
+            animation-name: first-animation;
+            animation-duration: 2s;
+            animation-iteration-count: 2;
+        }
+
+        /* timing-function, delay */
+        .key-box {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin: 10px;
+            border-radius: 20px;
+        }
+
+        .box1 { background: red; }
+        .box2 { background: green; }
+        .box3 { background: gold; }
+
+        /* 크기 변경 애니메이션 생성 */
+        @keyframes up-size {
+            0% {
+                width: 100px;
+        
+            }
+            100% {
+                width: 300px;
+            }
+        }
+
+        /* hover시, 크기 변경 애니메이션 적용 */
+        .box1:hover {
+            animation: up-size 1s 2;
+        }
+        .box2:hover {
+            animation: up-size 1s 1s 2;
+        }
+        .box3:hover {
+            animation: up-size 1s -1s 2;
+        }
+
+        /* direction */
+        /* 이동 애니메이션 생성 */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, 0);
+            }
+            50% {
+                transform: translate(50px, 50px);
+            }
+            75% {
+                transform: translate(0, 50px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        /* 이동 애니메이션 적용 */
+        .key-box.direction {
+            animation: move 1s 1s 3;
+            animation-direction: reverse;
+        }
+
+        /* fill-mode */
+        /* fill-mode 애니메이션 생성 */
+        @keyframes fill-mode {
+            0% {
+            transform: translate(200px, 0);
+            }
+            100% {
+                transform: translate(400px, 400px);
+            }
+        }
+        /* fill-mode 애니메이션 적용 */
+        .key-box.fill-mode {
+            animation-name: fill-mode;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+
+        /* play-state */
+        .key-box.play-state {
+            animation: up-size 2s infinite alternate;
+        }
+        /* hover시, play-state 적용 */
+        .key-box.play-state:hover {
+            animation-play-state: paused;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- animation : 요소의 동작을 세분화하여 지정 -->
+    <!-- 
+        animation-name              : @keyframes 규칙의 이름을 지정 (none)
+        animation-duration          : 지속시간 설정(0s)
+        animation-timing-function   : 타이밍함수지정(ease)
+        animation-delay             : 대기시간설정(0s)
+        animation-iteration-count   : 반복횟수(1)
+        animation-direction         : 방향설정(normal)
+        animation-fill-mode         : 전후상태(위치)설정(none)
+        animation-play-state        : 재생과 정지 설정(running)
+
+        animation : 이름 지속시간 [타이밍함수 대기시간 반복횟수 반복방향 전후상태 재생/정지] -->
+        
+    <!-- <div class="box"></div> -->
+
+    <!-- timing-function, delay -->
+    <!-- <div class="key-box box1">0s</div>
+    <div class="key-box box2">1s</div>
+    <div class="key-box box3">-1s</div> -->
+    
+    <!-- direction -->
+    <!-- 
+        normal : 정방향
+        reverse : 역방향
+        alternate : 정방향 - 역방향 반복
+        alternate-reverse : 역방향 - 정방향 반복 -->
+    
+    <!-- <div class="key-box direction"></div> -->
+
+    <!-- fill-mode -->
+    <!-- 
+        none : 기존 위치 시작 -> 애니메이션 시작 위치 이동 -> 동작 -> 기존위치 끝
+        forwards : 기존 위치 시작 -> 애니메이션 시작 위치 이동 -> 동작 -> 애니메이션 끝위치에서 끝
+        backwards : 애니메이션 시작 위치 시작 -> 동작 -> 기존 위치에서 끝
+        both : 애니메이션 시작 위치 시작 -> 동작 -> 애니메이션 끝 위치에서 끝 -->
+    <!-- <div class="key-box fill-mode"></div> -->
+
+    <!-- play-state -->
+    <div class="key-box play-state"></div>
+
+</body>
+</html>

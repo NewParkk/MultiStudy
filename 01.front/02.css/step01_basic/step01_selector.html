@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_selector</title>
+    <style>
+        /* 
+        p {
+            text-align: center;
+        }
+        .study {
+            color:violet
+        }
+        #id1 {
+            text-align: left;
+        }
+        p, h2 {
+            text-align: right;
+        } 
+        */
+
+        /* 연결 선택자 */
+        /* li.berry {
+            color: red;
+        } */
+
+        /* 하위 선택자 */
+        /* .fruits li {
+            color: gold;
+        } */
+
+        /* 형제 선택자 : +근접(하나만), ~인접(근처모두)*/
+        /* 
+            .berry ~ li {
+            color: red;
+        } 
+        */
+
+        /* 속성 선택자 : [속성] */
+        /* [disabled] {
+            color: red;
+        }
+
+        [type="password"] {
+            color: blue;
+        }
+
+        [class^="btn-"] {
+            color: tomato;
+        }
+
+        [class$="top"] {
+            color: gold;
+        } */
+        
+        /* 가상클래스 : */
+        /* a:link {
+            background: yellow;
+        }
+        a:visited {
+            background: cyan;
+        }
+        hover 마우스 올렸을때 변화
+        a:hover {
+            background: hotpink;
+        }
+        active 클릭시
+        a:active {
+            background: blue;
+        }
+        input:focus {
+            background: burlywood;
+        } */
+
+        /* -child : first, last */
+        /* .fruits li:last-child {
+            color: red;
+        } */
+
+        /* nth */
+        /* .fruits li:nth-child(2n+1) {
+            color: red
+        }
+
+        .fruits p:nth-of-type(1) {
+            color: violet;
+        } */
+
+        /* 가상 요소 선택자 :: */
+        /* ul.before li {
+            list-style-type: none;
+        }
+
+        ul.before li::before {
+            content: "-";
+        } */
+
+    </style>
+</head>
+<body>
+    <h1>selector</h1>
+    
+    <!-- 기본 선택자 -->
+    <!-- 
+    <p class="study">selector 학습1</p>
+    <p class="study" id="id1">selector 학습2</p>
+    <h2>selector 학습3</h2> 
+    -->
+
+
+    <!-- 기타 선택자 -->
+    <!-- <div class="combination">
+        <ul class="fruits">
+            <li>사과</li>
+            <li class="berry">딸기</li>
+            <li>수박</li>
+            <li>무화과</li>
+            <p class="grape">포도</p>
+            <p>아보카도</p>
+        </ul>
+        <li>파인애플</li>
+        <p>샤인머스캣</p>
+    </div> -->
+
+    <!-- 속성 선택자 -->
+    
+    <!-- <input type="text" value="front">
+    <input type="password" value="2023">
+    <input type="text" value="disabled text" disabled>
+
+    <button class="btn-top">top</button>
+    <button class="btn-left">left</button>
+    <button>right</button>  -->
+   
+
+    
+     <!-- 가상 클래스 선택자 -->
+     <!-- <a href="">링크</a>
+     <input type="text" name="" id="">
+ 
+     <hr /> -->
+ 
+     <!-- 가상 요소 선택자 -->
+     <!-- <ul class="before">
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+         <li>5</li>
+         <li>6</li>
+         <li>7</li>
+         <li>8</li>
+         <li>9</li>
+         <li>10</li>
+     </ul> -->
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+package step01;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class SeleniumPrac {
+	
+	public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
+	public static String WEB_DRIVER_PATH = "C:/multi/00.sw/lib/chromedriver.exe";
+	
+	
+	public static void main(String[] args) {
+		
+		// 드라이버 설정
+		System.setProperty("webdriver.chrome.driver", WEB_DRIVER_PATH);
+				
+		// WebDriver
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.starbucks.co.kr/menu/drink_list.do");
+		
+		List<WebElement> menuDatas = driver.findElements(By.className("menuDataSet"));
+		
+		
+		
+		
+		for (WebElement menuData : menuDatas) {
+			
+			WebDriverWait wait = new WebDriverWait(driver, 3);
+			WebElement a = menuData.findElement(By.tagName("a"));
+			new Actions(driver).click(a).perform();
+			List<WebElement> contents = driver.findElements(By.className("product_info_content"));
+			
+			for (WebElement content : contents) {
+				List<WebElement> dt = content.findElements(By.tagName("dt"));
+				
+				for(WebElement text : dt) {
+					String dtText = text.getText();
+					System.out.println(dtText);
+					driver.navigate().back();
+					
+				}
+			}
+		}
+		
+		
+		
+		
+//		new Actions(driver).click().perform();
+		
+//		product_info_content > li > dt
+		
+		
+		
+		
+//		System.out.println(src);
+		
+	}
+
+}

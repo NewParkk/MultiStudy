@@ -1,0 +1,3 @@
+dblink = "jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul"
+id = "SCOTT"
+password = "TIGER"

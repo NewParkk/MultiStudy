@@ -1,0 +1,43 @@
+package step01;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class JsoupTest {
+
+	public static void main(String[] args) {
+		
+		try {
+			Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/Main_Page").get();
+			// Elemet, Elements
+//			System.out.println(doc.getElementById("mp-welcome"));
+//			System.out.println(doc.select("#mp-welcome"));
+//			System.out.println(doc.select("").get(0).text());
+			System.out.println(doc.getElementById("mp-itn"));
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_object</title>
+</head>
+<body>
+    <h1>Object</h1>
+
+    <script>
+        // 객체
+        // 1. 객체 리터럴 : {}
+        // let obj1 = {name:"multi", age:20};
+        // console.log(obj1);
+       
+        // 객체의 값에 접근
+        // console.log(obj1.name);
+       
+        // 객체의 값이 변경
+        // obj1.name = "js";
+        // console.log(obj1.name);
+
+        // 객체에 새로운 property 추가
+        // obj1.name2 = "js";
+        // console.log(obj1);
+
+       
+       
+       
+       
+       
+       
+        // 2. 객체 생성자 : new
+        // let obj2 = new Object();
+        // console.log(obj2);
+
+       
+       
+       
+        // 3. 사용자정의 객체 : 생성자 함수(대문자로 시작)
+        // 고객이라는 객체 생성
+        // 함수 내부 키값 설정 : 키 = 값 
+        // function Customer() {
+            // this : 객체 자신을 뜻함
+        //     this.grade = "gold"
+        // }
+        // let obj3 = new Customer();
+        // console.log(obj3);
+
+        function Car(brand,color,price) {
+            this.brand = brand,
+            this.color = color,
+            this.price = price
+
+            this.turnOn = function() {
+                console.log('시동 걸림');
+            }
+        }
+
+
+        // let obj4 = new Car();
+        // console.log(obj4);
+        // obj4.turnOn();
+
+
+        let myCar = new Car("bmw","white","10억");
+        console.log(myCar);
+
+
+         // 생성자 함수를 활용하여 Student 객체를 생성하려고 합니다.
+        // 이때, 내부 property로는 name(이름), grade(학년), id(학생id) 값이 존재하고
+        // 기능으로는 이름과 학년, 그리고 id값을 모두 반환하는 printInfo라는 메소드가 존재합니다.
+        // 주어진 건을 활용하여 Student 객체를 만들어 주세요.
+        // Student(name, grade, id) - 파라미터 3가지를 모두 받을 수 있도록!
+
+        function Student(name, grade, id) {
+            this.name = name,
+            this.grade = grade,
+            this.id = id
+
+            this.printInfo = function() {
+                console.log(`이름 : ${name} , 학년 : ${grade} , 아이디 : ${id}`)
+            }
+        }
+
+        let student1 = new Student("홀리몰리","13학년","20103216")
+        console.log(student1['name']);
+        student1.printInfo()
+
+
+        // for ~ in
+        for(v in student1) {
+            console.log(student1[v]);
+        }
+
+
+    </script>
+</body>
+</html>

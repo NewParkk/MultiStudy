@@ -1,0 +1,18 @@
+package step01;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumTest {
+
+	public static void main(String[] args) {
+		
+		// 드라이버 설정
+		System.setProperty("webdriver.chrome.driver", "C:\\multi\\00.sw\\lib\\chromdriver.exe");
+	
+		// WebDriver
+		WebDriver driver = new ChromeDriver();
+		
+		
+	}
+}

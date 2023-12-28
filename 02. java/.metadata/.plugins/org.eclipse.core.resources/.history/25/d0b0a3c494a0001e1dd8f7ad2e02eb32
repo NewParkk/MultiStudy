@@ -1,0 +1,42 @@
+package step01;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class JsoupTest {
+
+	public static void main(String[] args) {
+		
+		try {
+			Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/Main_Page").get();
+			// Elemet, Elements
+//			System.out.println(doc.getElementById("mp-welcome"));
+//			System.out.println(doc.select("#mp-welcome"));
+			System.out.println(doc.select("#mp-itn > ul > li:nth-child(1) > b > a").get(0).absUrl("href"));
+//			System.out.println(doc.getElementById("mp-itn").getElementsByTag("b"));
+			
+			System.out.println(doc.select("#mp-itn > ul > li:nth-child(2) > b > a").get(0).absUrl("href"));
+			Elements news = doc.select("#mp-itn > ul > li > b > a");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

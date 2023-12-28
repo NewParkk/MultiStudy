@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_event</title>
+    <style>
+        .hide {
+            display: none;
+        }
+        #invalid {
+            color: red;
+        }
+        .invalid {
+            border: 2px red solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu</h1>
+    
+    <h3>서비스</h3>
+    <button id="check" class="tab" name="checkName" onclick="showContent()">조회</button>
+    <button id="transfer" class="tab">이체</button>
+    <ul class="checkService hide">
+        <li>계좌조회</li>
+        <li>수표조회</li>
+        <li>오픈뱅킹</li>
+    </ul>
+
+    <hr>
+
+    <div id="content"></div>
+    <div id="content2"></div>
+
+    <hr>
+
+    <div id="dom">
+        <h1>Plus-Minus</h1>
+        <div id="result">0</div><button id="btn-plus" class="btn">+1</button>
+        <button id="btn-minus" class="btn">-1</button>
+    </div>
+
+    <script>
+        // step01 인라인 방식
+        const content = document.getElementById('content');
+        // function showContent() {
+        //     content.innerHTML = "조회 서비스";
+        // }
+
+        // step02 프로퍼티 방식
+        // 같은 event 중복 적용 불가능
+        // 제일 마지막 방식만 적용
+
+        const checkBtn = document.getElementById('check');
+        const content2 = document.getElementById('content2');
+        // checkBtn.onclick = function() {
+        //      content.innerHTML = "조회 서비스";
+        
+        // }
+        // checkBtn.onclick = function() {
+        //     content2.innerHTML = "조회 서비스2";
+        // }
+        // step03 addEventListener
+        checkBtn.addEventListener('dblclick',function showContent() {
+            content.innerHTML = "조회 서비스";
+        } )
+        checkBtn.addEventListener('dblclick',function showContent() {
+            content2.innerHTML = "조회 서비스2";
+        } )
+
+        
+
+        const plusBtn = document.getElementById('btn-plus');
+        const minusBtn = document.getElementById('btn-minus');
+        const result = document.getElementById('result');
+
+        plusBtn.addEventListener('click', function plus() {
+            result.innerHTML = + result.innerHTML + 1;
+        })
+
+        // 함수명을 따로 선언할 필요가 없기때문에 
+        // 즉시 실행 함수로서 화살표로 표현가능
+        minusBtn.addEventListener('click', () => {
+            result.innerHTML = + result.innerHTML - 1;
+        })
+
+
+
+
+        // 이벤트
+        // https://developer.mozilla.org/ko/docs/Learn/JavaScript/Building_blocks/Events
+        // Mouse
+        // click, dblclick, mouseover, mounseup, mousedown....
+        // ex 서비스
+
+
+        // ex mouseover
+        // checkService -> 사라졌다가 보여지도록 지정
+
+
+        // Keyboard
+        // keydown, keyup, ...
+
+    </script>
+</body>
+</html>

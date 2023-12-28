@@ -1,0 +1,42 @@
+package util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DBUtill {
+		
+	static {
+		// 1단계 드라이버연결
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+		
+	
+	// 2단계 db링크 연결
+	public static Connection getConnection() throws SQLException {
+		
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul", "SCOTT", "TIGER");
+			
+	}
+		
+	// 6단계
+	public static void close(ResultSet rset,  Statement stmt, Connection conn ) {
+	 if(rset != null) {
+		rset.close();
+	 }
+	 if (stmt != null) {
+		stmt.close();
+	 }	
+	if (conn != null) {
+		conn.close();		
+	}	
+	
+	}
+}

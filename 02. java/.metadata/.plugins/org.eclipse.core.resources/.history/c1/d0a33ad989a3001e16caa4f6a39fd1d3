@@ -1,0 +1,12 @@
+package step01;
+
+public class SeleniumTest {
+
+	public static void main(String[] args) {
+		
+		// 드라이버 설정
+		System.setProperty("webdriver.chrome.driver", "C:\\multi\\00.sw\\lib\\chromdriver.exe");
+		
+	}
+
+}

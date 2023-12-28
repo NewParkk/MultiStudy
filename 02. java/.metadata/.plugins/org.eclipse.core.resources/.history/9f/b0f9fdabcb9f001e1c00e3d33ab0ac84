@@ -1,0 +1,49 @@
+package dept.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import dept.dto.Dept;
+
+public class DeptDAO {
+	
+	// 모든 부서 출력
+	public static ArrayList<Dept> getAllDept() throws SQLException, ClassNotFoundException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rset = null;
+		ArrayList<Dept> deptList = null;
+		
+		try {
+			// 1단계 드라이버연결
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			// 2단계 db링크 연결
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul", "SCOTT", "TIGER");
+			// 3단계 stmt 만들고
+			stmt = conn.createStatement();
+			// 4단계 쿼리문 날릴 변수
+			rset = stmt.executeQuery("SELECT * FROM dept");
+			
+			// 5단계
+			deptList = new ArrayList<Dept>();
+			
+			while(rset.next()) {
+				deptList.add(new Dept(rset.getInt("deptno"), 
+										rset.getString("dname"),
+										rset.getString("loc")));
+			}
+			// 6단계
+		} finally {
+			rset.close();
+			stmt.close();
+			conn.close();
+		}
+		
+		
+		return deptList;
+	}
+}

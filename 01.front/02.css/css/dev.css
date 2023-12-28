@@ -1,0 +1,354 @@
+@charset 'UTF-8';
+
+/* color */
+:root {
+    --grey: #333;
+    --white: #fff;
+    --light-blue: #4db1ec;
+    --main-padding: 2rem;
+}
+
+/* general */
+html{
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+body{
+    color: #333;
+    font-family: sans-serif;
+}
+
+/* common */
+p {
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+}
+h2 {
+    font-size: 3rem;
+    margin-bottom: 1.8rem;
+}
+h1,
+h2 {
+    text-align: center;
+}
+
+header,
+h1,
+h2 {
+    font-family: impact, sans-serif;
+}
+
+.wrapper {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    color: #fff;
+    background: #333;
+    padding: 1rem 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+/*  */
+header .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+header a {
+    font-size: 1.5rem;
+}
+/*  */
+.btn-menu {
+    position: absolute; 
+    top: 10px;
+    right: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 1rem;
+}
+.main-nav {
+    position: absolute;
+    width: 0;
+    top: 50px;
+    right: 0;
+    background: var(--grey);
+    z-index: 2;
+    overflow: hidden;
+    transition: 1s;
+}
+.main-nav li {
+    text-align: center;
+    margin: 2rem 0;
+}
+.main-nav a {
+    display: block;
+}
+.main-nav.open-menu {
+    width: 100%;
+}
+
+/* hero */
+#hero {
+    background-image: url('https://cdn.pixabay.com/photo/2015/05/28/14/53/ux-788002_960_720.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    background-blend-mode: multiply;
+    animation: bg-color 30s 9999; 
+}
+
+@keyframes bg-color {
+    0% { background-color: #4db1ec; }
+    12.5% { background-color: #1665cc; }
+    25% { background-color: #b473bf; }
+    37.5% { background-color: #ffb2c1; }
+    50% { background-color: #ff9f67; }
+    62.5% { background-color: #ffd673; }
+    75% { background-color:  #a2e29b; }
+    87.5% { background-color: #00a2af; }
+    100% { background-color: #4db1ec; }
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-date {
+    color: var(--white);
+    text-align: center;
+    border-top: 3px solid var(--grey);
+    border-bottom: 3px solid var(--grey);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* about */
+#about {
+    padding: 4rem 1rem;
+}
+#about h2 {
+    background: linear-gradient(#ffd673, #ff9f67);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#about p {
+    margin-bottom: 2rem;
+}
+
+/* skills */
+/* 색상 : #EB5D7E, #7c539D */
+#skills {
+    background-image: linear-gradient(#EB5D7E, #7c539D);
+    padding: 5rem 0;
+    clip-path: polygon(100% 10%, 100% 90%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(100% 10%, 100% 90%, 0 100%, 0 0);
+}
+
+#skills h2 {
+    color: var(--white);
+}
+
+.skills-table {
+    color: var(--white);
+    width: 100%;
+}
+
+.skills-table tr {
+    border-bottom: 1px solid;
+}
+
+.skills-table td {
+    line-height: 1.5rem;
+    display: block;
+}
+
+/* who */
+#who {
+    padding: 3rem 1rem;
+}
+.who-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    /* margin-bottom: ; */
+}
+.who-text {
+    margin-left: 1rem;
+}
+/* 색상 : #64B44C, #FFEB7F */
+#who h2{
+    background: linear-gradient(#64B44C, #FFEB7F);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#who h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+#who img {
+    border-radius: 50%;
+    width: 20%;
+}
+
+/* contact */
+/* 색상 : #67BFD5, #F7CD39 */
+#contact {
+    background-image:linear-gradient(#67BFD5, #F7CD39);
+    padding: 6rem 1rem 2rem;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+}
+
+#contact h2 {
+    color: var(--white);
+}
+.contact-form {
+    max-width: 480px;
+    margin: 0 auto 5rem;
+}
+.contact-form label {
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.contact-field {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.contact-btn {
+    background: var(--grey);
+    color: var(--white);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* footer */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--white);
+}
+
+/* media */
+@media (min-width: 600px) {
+    /* common */
+    h2 {
+        font-size: 5rem;
+    }
+    a:hover {
+        color: #4db1ec;
+    }
+    /* hero */
+    #hero h1 {
+        font-size: 6.5rem;
+    }
+
+    /* nav */
+    /* 1. menu버튼 사라짐 */
+    /* 2. nav가 나타남 */
+    .btn-menu {
+        display: none;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: flex;
+        position: static;
+    }
+    .main-nav li {
+        margin: 0 0 0 1.5rem;
+    }
+
+    /* skills */
+    .skills-table td {
+        display: table-cell;
+    }
+
+    /* who */
+    .who-list {
+        margin-bottom: 3rem;
+    }
+
+}
+  /* Sub-menu */
+  /* header nav ul li.sub-menu:before {
+    content: '\f0d7';
+    font-family: fontAwesome;
+    position: absolute;
+    line-height: 50px;
+    color: #FFF;
+    right: 5px;
+    cursor: pointer;
+  } */
+    /* Toggle Button */
+/* .menu-toggle {
+    color: #FFF;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  } */
+  /* Media Queries */
+  /* @media (max-width: 991px) {
+    header {
+      padding: 0 20px;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    header nav {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 50px);
+      background: #333;
+      top: 50px;
+      left: -100%;
+      transition: 0.5s;
+    }
+  
+    header nav.active {
+      left: 0;
+    }
+  
+    header nav ul {
+      display: block;
+      text-align: center;
+    }
+  
+    header nav ul li a {
+      border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+  
+    header nav ul li.active ul {
+      position: relative;
+      background: #003e6f;
+    }
+  
+    header nav ul li ul li {
+      width: 100%;
+    }
+  } */

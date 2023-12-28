@@ -1,0 +1,67 @@
+package step01.api;
+
+import java.time.LocalDate;
+
+public class Ex03Time {
+	public static void main(String[] args) {
+		// LocalDate, LocalTime
+//		
+//		LocalDate nowDate = LocalDate.now();
+//		LocalTime nowTime = LocalTime.now();
+//		System.out.println(nowDate.getDayOfMonth());
+//		System.out.println(nowTime);
+//		
+//		LocalDateTime nowDateTime = LocalDateTime.now();
+//		System.out.println(nowDateTime);
+//		
+//		// LocalDate => Date : valueOf
+//		LocalDate localDate = LocalDate.now();
+//		Date changedDate = Date.valueOf(localDate);
+//		System.out.println(changedDate);
+//		
+//		
+//	    // with
+//		System.out.println(localDate.withYear(2024).withMonth(12).withDayOfMonth(25));
+		
+		
+		
+		
+		
+		
+		LocalDate ld = LocalDate.now();
+		  System.out.println(ld); // 2023
+		  long m = ld.getMonthValue();
+		  System.out.println(m); // 1
+	
+		
+		
+		
+		  long currentTimeMillis = System.currentTimeMillis();
+	        System.out.println(currentTimeMillis);
+		
+		
+	        LocalDate currentDate = LocalDate.now();
+
+	        // 연도 가져오기
+	        int year = currentDate.getYear();
+	        System.out.println("Year: " + year);
+
+	        // 월 가져오기
+	        int month = currentDate.getMonthValue();
+	        System.out.println("Month: " + month);
+
+	        // 일 가져오기
+	        int day = currentDate.getDayOfMonth();
+	        System.out.println("Day: " + day);
+		
+		  
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

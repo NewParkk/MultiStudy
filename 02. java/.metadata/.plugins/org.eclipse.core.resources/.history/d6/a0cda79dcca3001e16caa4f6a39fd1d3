@@ -1,0 +1,55 @@
+package movie.DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import movie.utill.DBUtill;
+
+public class DAO {
+		
+		public static boolean insertData() {
+			
+			Connection conn = null;
+			PreparedStatement pstmt =  null;
+//			ResultSet rset = null;
+//			Statement stmt = null;
+			
+			pstmt.setString(1, title);
+            pstmt.setString(2, tomatoRate);
+            pstmt.setString(3, audienceRate);
+            pstmt.setString(4, releaseDate);
+            
+            
+            
+			try {
+				conn = DBUtill.getConnection();
+				pstmt =  conn.prepareStatement("INSERT INTO movie VALUES(?, ?, ?, ?)");
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+			
+			return false;
+		}
+
+
+}

@@ -1,0 +1,74 @@
+package step00;
+
+import java.util.HashSet;
+
+public class Intro {
+
+//	public static void main(String[] args) {
+//		
+//			try {
+//	            someMethod();
+//	        } catch (Exception e) {
+//	            System.out.println("Exception caught in main method: " + e.getMessage());
+//	        } finally {
+//	            System.out.println("Finally block in main method");
+//	        }
+//			
+//	   }
+//	
+//	
+//	
+//		    public static void someMethod() throws Exception {
+//		        try {
+//		            // 예외 발생 시뮬레이션
+//		            throw new Exception("Some exception in someMethod");
+//		        } catch (Exception e) {
+//		            System.out.println("Exception caught in someMethod: " + e.getMessage());
+//		            // 다른 메서드 호출 또는 예외 던지기
+//		            anotherMethod();
+//		            throw e; // 다른 곳으로 예외 던짐
+//		        } finally {
+//		            System.out.println("Finally block in someMethod");
+//		        }
+//		    }
+//	
+//		    public static void anotherMethod() {
+//		        System.out.println("Another method");
+//		    }
+	static class Student{	    
+	private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+//        return super.equals(obj); 기존 Object클래스 구현 내용
+        if (this == obj) return true; //같은 객체를 참조하여 참조값이 같은경우 true를 바로 리턴해준다.
+        if (obj == null || getClass() != obj.getClass()) return false; //비교하는 객체가 null인지 클래스가 같은지 체크한다.
+        Student student = (Student) obj;
+					return age == student.age &&
+								(name == null ? student.name == null : name.equals(student.name));
+    }
+
+		
+
+
+		public static void main(String[] args) {
+        HashSet<Student> students = new HashSet<>();
+
+        Student student1 = new Student("Alice", 20);
+        Student student2 = new Student("Alice", 20);
+
+        students.add(student1);
+
+        // student2는 equals로는 같지만 hashCode를 오버라이딩하지 않았기 때문에 HashSet에서 다른 객체로 취급될 수 있습니다.
+        System.out.println(students.contains(student2));  // false
+    }
+	}
+}
+
+

@@ -1,0 +1,62 @@
+package step01.api;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
+public class Ex03Time {
+	public static void main(String[] args) {
+		// LocalDate, LocalTime
+//		
+//		LocalDate nowDate = LocalDate.now();
+//		LocalTime nowTime = LocalTime.now();
+//		System.out.println(nowDate.getDayOfMonth());
+//		System.out.println(nowTime);
+//		
+//		LocalDateTime nowDateTime = LocalDateTime.now();
+//		System.out.println(nowDateTime);
+//		
+//		// LocalDate => Date : valueOf
+//		LocalDate localDate = LocalDate.now();
+//		Date changedDate = Date.valueOf(localDate);
+//		System.out.println(changedDate);
+//		
+//		
+//	    // with
+//		System.out.println(localDate.withYear(2024).withMonth(12).withDayOfMonth(25));
+		
+		
+		
+		
+		
+		
+		
+        
+        
+        
+        
+		LocalDateTime currentDateTime = LocalDateTime.now();
+	      System.out.println("Current DateTime: " + currentDateTime);
+
+	      // 3시간 30분 후의 날짜와 시간
+	      LocalDateTime futureDateTime = currentDateTime.plusHours(3).plusMinutes(30);
+	      System.out.println("Future DateTime: " + futureDateTime);
+
+	      // 두 날짜와 시간 간의 차이 계산
+	      Duration duration = Duration.between(currentDateTime, futureDateTime);
+	      System.out.println("Duration: " + duration.toHours() + " hours, " +
+									          duration.toMinutes() + " minutes")
+
+	      ZoneId zoneId = ZoneId.of("America/New_York");
+	      ZonedDateTime zonedDateTime = ZonedDateTime.of(currentDateTime, zoneId);
+
+	      System.out.println("currentDateTime: " + currentDateTime);
+	      System.out.println("Zoned DateTime in New York: " + zonedDateTime);
+		
+
+	}
+}

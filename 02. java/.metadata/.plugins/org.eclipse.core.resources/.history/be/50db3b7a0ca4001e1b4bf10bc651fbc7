@@ -1,0 +1,52 @@
+package step00;
+
+
+
+class Prac {
+	public int num;
+}
+
+public class Intro {
+
+	public static void main(String[] args) {
+		
+		
+		 try {
+	            System.out.println(1 / 0); // 0으로 나누기 오류
+	        } catch (ArithmeticException ae) {
+	            ae.printStackTrace();
+	            System.out.println(ae.getMessage());
+	        }
+	    }
+	
+		
+		
+//		try {
+//            someMethod();
+//        } catch (Exception e) {
+//            System.out.println("Exception caught in main method: " + e.getMessage());
+//        } finally {
+//            System.out.println("Finally block in main method");
+//        }
+//    }
+//
+//    public static void someMethod() throws Exception {
+//        try {
+//            // 예외 발생 시뮬레이션
+//            throw new Exception("Some exception in someMethod");
+//        } catch (Exception e) {
+//            System.out.println("Exception caught in someMethod: " + e.getMessage());
+//            // 다른 메서드 호출 또는 예외 던지기
+//            anotherMethod();
+//            throw e; // 다른 곳으로 예외 던짐
+//        } finally {
+//            System.out.println("Finally block in someMethod");
+//        }
+//    }
+//
+//    public static void anotherMethod() {
+//        System.out.println("Another method");
+	}
+}
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_transition</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin: 50px;
+
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+            transition-delay: 1s; */
+            transition: 0.5s ease 0.2s;
+
+            /* 타이밍 지정 함수
+                - ease : 빠르게-느리게
+                - linear : 일정하게
+                - ease-in/out : 느리게-빠르게 / 빠르게-느리게 
+                - cubic-bezier(n,n,n,n) : */
+        }
+        .box:hover {
+            width: 300px;
+            background: darkgreen;
+        }
+
+        /* 실습 */
+        /* 400px, 400px 파란색 정사각형 -> hover시 1초동안 -> 노란색 원으로 변화 */
+        .change {
+            width: 400px;
+            height: 400px;
+            background: blue;
+            transition: 1s ease;
+        }
+        .change:hover {
+            background: yellow;
+            border-radius: 50%;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- transition : CSS 속성의 시작과 끝을 지정하여 중간값에 동적인 효과 넣을 수 있도록 하는 기능 -->
+    <!-- transition-property : 속성 이름(all) -->
+    <!-- transition-duration : 지속시간(0s) -->
+    <!-- transition-timing-fuction : 타이밍함수지정(ease) -->
+        <!-- https://easings.net/ko --> 
+        <!-- ease : 빠르게-느리게 -->
+        <!-- linear : 일정하게 -->
+        <!-- ease-in : 느리게-빠르게 -->
+        <!-- ease-out : 빠르게-느리게 -->
+        <!-- cubic-bezier(n,n,n,n) (자신만의 값을 정의) -->
+    <!-- transition-delay : 대기시간(0s) -->
+    <!-- <div class="box"></div> -->
+
+    <div class="change"></div>
+
+</body>
+</html>

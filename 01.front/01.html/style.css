@@ -1,0 +1,233 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: #262626;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+
+  header .logo {
+    color: #FFF;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+  }
+  
+ 
+  header nav {
+    float: right;
+  }
+  
+  
+  header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+ 
+  header nav ul li {
+    list-style: none;
+    position: relative;
+  }
+
+
+body{
+    background-color: darkslateblue;
+}
+/* 
+가장 바깥을 wrap태그로 감싸놨기 때문에
+wrap태그 중앙정렬하여 모든 요소를 가운데로 위치
+*/
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* 이미지가 아닌 아이콘이기 때문에
+    텍스트 정렬로 위치조정 가능
+    */
+    text-align: center;
+}
+
+
+
+/* 아이콘 class 크기조정 */
+.material-symbols-outlined{
+    font-size: 10rem;
+}
+#menu{
+    font-size: 4rem;
+    color: white;
+}
+
+/* 
+p태그 글자에 지정한
+lg-text클래스 스타일지정 
+*/
+.lg-text{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sm-text{
+    font-size: 1.5rem;
+}
+
+#dynamic{
+    /* 원래 위치를 기준으로 움직이게함 기준점 설정과같음*/
+    position: relative;
+    /*
+    p태그는 블록이기 때문에 부모태그인 wrap태그의 넓이를 가짐
+    때문에 
+    아래 설정한 커서가 p태그에 자연스럽게 붙게하기위해
+    인라인요소로 보이게끔 설정
+    */
+    display: inline-block;
+}
+
+
+/* 
+id식별자를 이용 id = dynamic요소만 css추가 
+::after로 요소 뒤에 추가
+*/
+#dynamic::after{
+    content:"";
+    display: block;
+    /* 위에 설정한 relative 위치에 기반하여 움직이게 위치지정 */
+    position: absolute;
+    top:0;
+    /* 글자에서 살짝 떨어져 보이게끔 */
+    right:-10px;
+    width: 4px;
+    /* p태그의 높이와 같이 설정하여 커서같이 */
+    height: 100%;
+    background-color: white;
+}
+
+
+/* dymaic태그에 active를 넣어 평상시 
+active 상태이기 때문에 안보이게끔
+*/
+#dynamic.active::after{
+    display: none;
+}
+
+
+
+/* 눈모양 만들기 */
+.snow{
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    /* 10초에 걸쳐  무한반복*/
+    animation: snow 10s linear infinite;
+}
+
+
+.snow:nth-of-type(2n){
+    width: 20px;
+    height: 20px;
+    animation-duration: 6s;
+    animation-delay: 0.1s;
+}
+
+.snow:nth-of-type(2n+1){
+    animation-duration: 7s;
+    animation-delay: 0.5s;
+}
+
+.snow:nth-of-type(9n){
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+
+
+
+@keyframes snow {
+    0%{
+        /* 투명도 */
+        opacity: 0;
+        /* Y값 위치 */
+        transform: translateY(0);
+    }
+    20%{
+        opacity: 1;
+        /* x,y값 지정 */
+        transform: translate(-15px, 20vh);
+    }
+    40%{
+        opacity: 1;
+        /* x,y값 지정 */
+        transform: translate(15px, 40vh);
+    }
+    60%{
+        opacity: 1;
+        /* x,y값 지정 */
+        transform: translate(-15px, 60vh);
+    }
+    80%{
+        opacity: 1;
+        /* x,y값 지정 */
+        transform: translate(0px, 80vh);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+
+
+}
+
+
+
+
+
+  
+
+  
+  header nav ul li ul {
+    position: absolute;
+    left: 0;
+    background: #333;
+    display: none;
+  }
+  
+  header nav ul li.active ul {
+    display: block;
+  }
+  
+  /* header nav ul li ul li {
+    display: block;
+    width: 200px;
+  } */
+  
+  header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+  }
+  
+  header nav ul li a:hover, header nav ul li a.active {
+    color: #FFF;
+    background: #2196f3;
+  }

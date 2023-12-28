@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_call</title>
+</head>
+<body>
+    <h1>Call By</h1>
+
+    <script>
+        // 1. 값(객체 제외 모든 타입)에 의한 전달
+        // Call By Value
+        let num = 100;
+        let no = num;
+
+        // console.log(num);
+        // console.log(no);
+        
+        num = 200;
+        // console.log(num);
+        // console.log(no);
+
+        // 2. 참조(객체)에 의한 전달
+        // Call By Reference
+        let person = {
+            name: "it"
+        }
+
+        let copyPerson = person;
+
+        // console.log(person.name);
+        // console.log(copyPerson.name);
+
+        person.name = "js";
+        // console.log(person.name);
+        // console.log(copyPerson.name);
+
+
+        //
+        let nums = [1, 2, 3, 4, 5];
+        let noNums = nums;
+
+        console.log(nums);
+        console.log(noNums);
+
+        nums[2] = 30;
+        console.warn(nums);
+        console.error(noNums);
+
+    </script>
+</body>
+</html>

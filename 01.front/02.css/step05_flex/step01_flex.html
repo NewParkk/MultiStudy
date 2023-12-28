@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_flex</title>
+    <style>
+        .container .item {
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+        }
+        
+        /* display */
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* -wrap */
+        .container {
+			flex-wrap: wrap;
+        }
+
+        /* justify-content */
+        .container {
+            /* justify-content: space-evenly; */
+		}
+
+        /* align-content */
+        .container {
+            border: 3px solid red;
+            height: 400px;
+            /* align-content: center;
+            align-items: center; */
+        }
+
+        /* align-items */
+        .item {
+    
+		}
+
+        /* item */
+        /* order */
+        .item1 {
+			/* order: 0; */
+        }   
+
+        /* -grow : 기본크기를 제외한 나머지 비율을 나눔*/
+        .item1 {
+			flex-shrink: 1;
+        }
+        .item2 {
+			flex-shrink: 2;
+        }
+
+        /* z-index */
+
+    </style>
+</head>
+<body>
+        <!--1 . 컨테이너 : 인라인 플렉스-->
+		<!-- <div class="container">
+			<div class="item">item1</div>
+			<div class="item">item2</div>
+			<div class="item">item3</div>
+		</div> -->
+
+		<!-- 2. 플렉스 디렉션 : row, column -->
+		<!-- 주축과 교차축  -->
+		<!-- row일때 주축은 수평축, 교차축은 수직축 -->
+		<!-- main-start(flex-start) / end -->
+		<!-- cross-start(flex-start) / end -->
+
+		<!-- 3. flex-wrap : 줄넘김 처리(컨테이너가 아이템을 담을 공간이 없을때 줄바꿈 방식) -->
+		<!-- nowrap(기본) -->
+		<!-- wrap : 여러줄로 하나의 컨테이너로 묶음 -->
+		<!-- wrap-reverse : 여러줄로 하나의 컨테이너로 묶음 -->
+		<!-- <div class="container">
+			<div class="item">item1</div>
+			<div class="item">item2</div>
+			<div class="item">item3</div>
+			<div class="item">item4</div>
+			<div class="item">item5</div>
+		</div> -->
+
+		<!-- 4. justify-content : 주축 정렬방식 -->
+		<!-- <div class="container">
+			<div class="item">item1</div>
+			<div class="item">item2</div>
+			<div class="item">item3</div>
+			<div class="item">item4</div>
+			<div class="item">item5</div>
+		</div> -->
+
+		<!-- 5. align-content : 수직축 정렬 방식(컨테이너에 여러줄, 빈공간이 있을때만) -->
+		<!-- <div class="container">
+			<div class="item">item1</div>
+			<div class="item">item2</div>
+			<div class="item">item3</div>
+			<div class="item">item4</div>
+			<div class="item">item5</div>
+			<div class="item">item6</div>
+		</div> -->
+
+		<!-- 6. align-items : 아이템이 한줄에 있을 경우(align content가 있을경우 더 우선됨, 주의!) -->
+		<!-- <div class="container">
+			<div class="item">item1</div>
+			<div class="item">item2</div>
+			<div class="item">item3</div>
+			<div class="item">item4</div>
+			<div class="item">item5</div>
+			<div class="item">item6</div>
+		</div> -->
+
+		<!-- 아이템에 부여하는 속성 -->
+		<!-- 7. order : 순서 지정 가능(숫자가 클수록 뒤로 밀림, html 속성 변경시키지 않고도 적용 가능) -->
+		<!-- <div class="container">
+            <div class="item item1">item1</div>
+            <div class="item">item2</div>
+			<div class="item">item3</div>
+            <div class="item">item4</div>
+			<div class="item">item5</div>
+			<div class="item">item6</div>
+		</div> -->
+
+		<!-- 8.flex-grow : 증가 너비 비율 설정 -->
+		<div class="container">
+			<div class="item item1">item1</div>
+			<div class="item item2">item2</div>
+			<div class="item item3">item3</div>
+		</div>
+
+		<!-- 9.flex-shrink : 감소 너비 비율 설정(단, 가변 너비가 아니거나 0일경우 효과 없음) -->
+		<!-- 200px : 2  -  200px :1일때 90px이 줄어들면? -->
+
+</body>
+</html>

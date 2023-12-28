@@ -1,0 +1,73 @@
+OOP : Object Oriented Programming 객체 지향 프로그래밍
+	- 캡슐화
+	- 상속
+	- 다형성
+
+[학습]
+1. API(Application Programming Interface)
+	- 라이브러리(Library)라고도 함
+	- 프로그램 개발을 위해 제공되는 클래스 및 인터페이스 모음
+	- String, System, ...
+	- 주로 java.lang, java.util, java.time 패키지를 사용
+	- https://docs.oracle.com/javase/8/docs/api/
+
+2. 상속(Inheritance)
+	- https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
+	- 부모가 자식에게 물려주는 행위
+		- 상속하는 클래스 : 상위, parent, super, base
+	
+		- 상속받는 클래스 : 하위, child, sub, derived
+	
+	- 클래스 구성요소 "변수"와 "메소드"만 상속
+	- java.lang.Object : 모든 클래스 최상위
+	
+	- 필요성 : 기존의 구현 코드 상속 받아 사용(재사용성), 필요 속성 혹은 기능 확장 개발(확장성)
+		재사용성 -> 개발 속도 향상
+	
+	- 제약 : 자식 = 부모 관계에서만 성립
+	
+	- 문법
+	class 자식클래스명 extends 부모클래스명{
+		변수, 메소드만 상속
+		자식만의 변수, 메소드 추가 개발 기능
+	}
+	
+	- 자동 생성되는 코드
+		- 클래스 선언구 
+			extends Object
+			
+		- 생성자
+			미구현시 자동으로 추가
+			생성자별 첫 라인에 부모 생성자 '호출' : super();
+	
+	- 메소드 재정의(오버라이딩 overriding/override)
+		- **반환타입 메소드명 argument list는 100% 동일
+		- {} body 부분을 수정
+		- 부모의 메소드 로직을 그대로 반영하여 자식에게 사용할 경우, super()
+	
+	
+	- 키워드
+		super
+			- 하위 클래스에서 가지는 상위클래스에 대한 참조 값
+			super() : 상위 클래스 기본 생성자 호출
+			상위 클래스 인스턴스 참조값을 가지므로 상위 클래스 메서드 혹은 멤버변수에 접근 가능
+			
+3. 추상 클래스(Abstract Class)
+	- abstract 명령 키워드 사용
+	- 메서드의 선언만 있는 추상 메서드를 포함한 클래스
+	예) public int add(int x, int y)
+	- new 사용 불가능(객체 생성이 불가능하다)
+
+	- 응용 : 템플릿 메서드 패턴 
+		코드의 시나리오를 정의하는 메서드
+		*final로 선언하여 하위 클래스에서 재정의 할 수 없게 함
+		프레임 워크에서 많이 사용하는 설계 패턴
+		상위 클래스에서 전체 흐름을 정의 한 뒤 하위에서 다르게 구현하도록 함
+	
+	- 장점 : 통일화된 사용 방법 제안 가능
+
+4. 인터페이스 
+	- interface 명령 키워드 사용
+	- 모든 필드는 public static final
+	- 모든 메소드는 public abstract
+	- 다중 상속이 가능*

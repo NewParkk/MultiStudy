@@ -1,0 +1,15 @@
+package dept.controller;
+
+import java.util.ArrayList;
+
+import dept.dto.Dept;
+
+public class DeptController {
+	public static DeptController instance = new DeptController();
+	
+	
+	public static ArrayList<Dept> getAllDept() {
+		
+		return null;
+	}
+}

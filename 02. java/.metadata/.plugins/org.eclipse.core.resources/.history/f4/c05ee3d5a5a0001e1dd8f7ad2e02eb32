@@ -1,0 +1,57 @@
+package news.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import dept.dto.Dept;
+import step01.JsoupTest;
+import utill.DBUtill;
+
+public class NewDAO {
+	
+	public static void main(String[] args) {
+	// 특정 부서 생성 : INSERT INTO dept VALUES (deptno, dname, loc);
+			public static boolean intsertData(String title, String url) throws SQLException, ClassNotFoundException {
+				Connection conn = null;
+//				Statement stmt = null;
+				PreparedStatement pstmt = null;
+				
+				
+				
+				try {
+					// 1단계 
+//					Class.forName("com.mysql.cj.jdbc.Driver");
+					// 2단계
+					conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul", "SCOTT", "TIGER");
+//					conn = DBUtill.getConnection();
+					// 3단계 
+					pstmt = conn.prepareStatement("INSERT INTO dept VALUES (?, ?)");
+					// 4단계
+					int result = pstmt.executeUpdate("INSERT INTO dept VALUES(" + JsoupTest.Titlesget()  + " , "
+																			   + JsoupTest.Linksget()"));
+					pstmt.setInt(1, newDept.getDeptno());
+					pstmt.setString(2, newDept.getDname());				
+					pstmt.setString(3, newDept.getLoc());				
+					
+					int result = pstmt.executeUpdate();
+					
+					// 5단계
+					if(result != 0) {
+						return true;
+					}
+					// 6단계
+				} finally {
+					
+					pstmt.close();
+					conn.close();
+				}
+				
+				return false;
+			}
+			
+			
+			
+			
+	}
+}

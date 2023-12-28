@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;step01.Ex03Synchroniezd&apos; to &apos;Ex03Synchronized&apos;&#x0D;&#x0A;- Original project: &apos;step11_thread&apos;&#x0D;&#x0A;- Original element: &apos;step01.Ex03Synchroniezd&apos;&#x0D;&#x0A;- Renamed element: &apos;step01.Ex03Synchronized&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ex03Synchroniezd&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;step01{Ex03Synchroniezd.java[Ex03Synchroniezd" matchStrategy="1" name="Ex03Synchronized" qualified="false" references="true" similarDeclarations="false" stamp="1701995934526" textual="false" version="1.0"/>
+</session>

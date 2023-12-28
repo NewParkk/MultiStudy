@@ -1,0 +1,31 @@
+[]
+package dept.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import dept.dto.Dept;
+
+public class DeptDAO {
+	
+	// 모든 부서 출력
+	public static ArrayList<Dept> getAllDept() throws SQLException, ClassNotFoundException {
+		Connection conn = null;
+		
+		try {
+			// 1단계 
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			// 2단계
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SCOTT?serverTimezone=Asia/Seoul", "SCOTT", "TIGER");
+		
+		} finally {
+			
+		}
+		
+		
+		return null;
+	
+	}
+}
