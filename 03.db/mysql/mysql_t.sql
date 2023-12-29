@@ -644,3 +644,9 @@ FROM information_schema.table_constraints
 WHERE table_schema = 'SCOTT';
 
 
+SELECT *
+FROM dept;
+
+delete from movie;
+
+INSERT INTO dept VALUES(10, 'ACCOUNTING', 'SEOUL');

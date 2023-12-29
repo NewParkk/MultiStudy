@@ -160,9 +160,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\step07_ConnectionPoolBasic_t" path="/step07_ConnectionPoolBasic" reloadable="true" source="org.eclipse.jst.jee.server:step07_ConnectionPoolBasic_t">
-	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/mysql" password="TIGER" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scott?serverTimezone=Asia/Seoul" username="SCOTT"/>					
-</Context><Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\step05_state" path="/step05_state" reloadable="true" source="org.eclipse.jst.jee.server:step05_state"/></Host>
+      <Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\step08_ConnectionPool_ing" path="/step07_ConnectionPool_c" reloadable="true" source="org.eclipse.jst.jee.server:step08_ConnectionPool_ing">
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/mysql" password="TIGER" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scott?serverTimezone=Asia/Seoul" username="SCOTT"/>							
+</Context></Host>
     </Engine>
   </Service>
 </Server>

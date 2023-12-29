@@ -1317,3 +1317,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.google.co
 2023-12-27 01:31:42,111 [Worker-60: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-12-27 01:31:42,112 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\multi\02. java\crawlingProject\src\test\resources
 2023-12-27 19:12:41,243 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-12-29 09:41:22,024 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

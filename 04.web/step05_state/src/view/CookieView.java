@@ -18,7 +18,6 @@ public class CookieView extends HttpServlet {
 		for(Cookie cookie : cookies) {
 			System.out.println(cookie.getName());
 			System.out.println(cookie.getValue());
-		}
-		
+		}		
 	}
 }

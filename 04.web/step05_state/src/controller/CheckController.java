@@ -39,11 +39,7 @@ public class CheckController extends HttpServlet {
 //			s1.setMaxInactiveInterval(15);
 //			
 //			response.sendRedirect("view-session");
-			
-			
-			
-			
-					
+							
 			
 			// 쿠키 생성 -> 저장
 			Cookie c1 = new Cookie("cookieId", id);

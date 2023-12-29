@@ -1,6 +1,7 @@
 package dept.controller; 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -26,6 +27,20 @@ public class GetDeptContoller extends HttpServlet {
 		 */
 		
 		// ?
+		int deptno = Integer.parseInt(request.getParameter("deptno"));
+		String dname = null;
+		try {
+			dname = DeptDAO.getDeptDnameByDeptno(deptno);
+			if(dname != null) {
+				request.setAttribute("dname", dname);
+				request.getRequestDispatcher("view.jsp").forward(request, response);
+			} else {
+				response.sendRedirect("failView.jsp");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			response.sendRedirect("failView.jsp");
+		}
 		
 	}
 }

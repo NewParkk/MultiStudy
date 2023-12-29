@@ -7,6 +7,6 @@
 <title>Print Dname</title>
 </head>
 <body>
-	<div></div>
+	<div>${requestScope.dname}</div>
 </body>
 </html>
