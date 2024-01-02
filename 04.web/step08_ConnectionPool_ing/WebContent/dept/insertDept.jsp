@@ -79,7 +79,7 @@
 </form>
 <hr>
 <div align=center>
-	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href=''"></span>
+	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href='login.jsp'"></span>
 </div>
 
 <%@ include file="../layout/footer.jsp" %>

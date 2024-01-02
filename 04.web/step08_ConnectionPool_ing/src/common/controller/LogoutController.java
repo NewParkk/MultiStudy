@@ -16,8 +16,8 @@ public class LogoutController extends HttpServlet {
 		/*
 		 * 시나리오
 		 * 1) 세션 유무 확인
-		 * 		세션 X -> 로그인 페이지 "/main.do"
-		 * 		세션 O -> 세션 객체 제거 -> 로그인 페이지 "/main.do"
+		 * 		세션 X -> 로그인 페이지 "login.jsp"
+		 * 		세션 O -> 세션 객체 제거 -> 로그인 페이지 "login.jsp"
 		 * 
 		 */
 		
@@ -28,6 +28,20 @@ public class LogoutController extends HttpServlet {
 		// : 기존의 세션이 존재 하지 않으면 -> return null;
 		
 		// ?
+		
+		HttpSession session = request.getSession(false);
+		
+		if (session == null) {
+			url = "login.jsp";
+			response.sendRedirect(url);
+			return;
+		}
+		
+		session.invalidate();
+		session = null;
+		url = "getDeptList.do";
+		response.sendRedirect(url);
+		return;
 		
 	}
 }

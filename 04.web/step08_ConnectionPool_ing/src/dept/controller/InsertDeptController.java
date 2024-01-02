@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dept.dao.DeptDAO;
 import dept.dto.Dept;
@@ -16,7 +17,16 @@ import dept.dto.Dept;
 public class InsertDeptController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// ?
-
+		// 로그인 검증
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}		
+		
+		
+		
+		
 		String deptno = request.getParameter("deptno");
 		String dname = request.getParameter("dname");
 		String loc = request.getParameter("loc");
@@ -26,10 +36,13 @@ public class InsertDeptController extends HttpServlet {
 		
 	
 		boolean result = false;
-		
-		Dept newDept = new Dept(Integer.parseInt(deptno), dname, loc);
+		if (deptno == null) {
+			request.setAttribute("error", "부서번호 입력이 안됐습니다.");
+			request.getRequestDispatcher(url).forward(request, response);
+		}
 		
 		try {
+			Dept newDept = new Dept(Integer.parseInt(deptno), dname, loc);
 			result = DeptDAO.insertDept(newDept);
 			
 			if(result) {

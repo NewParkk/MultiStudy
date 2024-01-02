@@ -23,11 +23,25 @@ public class EmpDAO {
 		
 		try {
 			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, empno);
+			pstmt.setString(2, ename);
+			rset = pstmt.executeQuery();
 			
 			// ?
 			
+			
+			
 			if(rset.next()) {
-				// ?
+				emp = new Emp(
+							rset.getInt("empno"),
+							rset.getString("ename"),
+							rset.getString("job"),
+							rset.getInt("mgr"),
+							rset.getDate("hiredate"),
+							rset.getFloat("sal"),
+							rset.getInt("comm"),
+							rset.getInt("deptno"));
 			}
 		}finally {
 			DBUtil.close(rset, pstmt, con);

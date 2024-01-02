@@ -16,6 +16,13 @@ import dept.dto.Dept;
 @WebServlet("/updateDeptForm.do")
 public class UpdateDeptFormController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 검증
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+
 		// deptno -> 부서 객체 반환
 		// request 해당 객체 추가
 		// updateDept.jsp 해당 위치에 정보 출력

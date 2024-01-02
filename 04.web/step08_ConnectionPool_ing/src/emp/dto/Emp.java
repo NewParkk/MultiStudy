@@ -3,7 +3,7 @@ package emp.dto;
 import java.sql.Date;
 
 public class Emp {
-	private int empno;
+	private Integer empno;
 	private String ename;
 	private String job;
 	private Integer mgr;

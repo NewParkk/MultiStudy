@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dept.dao.DeptDAO;
 import dept.dto.Dept;
@@ -16,6 +17,19 @@ import dept.dto.Dept;
 @WebServlet("/getDeptList.do")
 public class GetDeptListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 검증
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+		
+		
+		
+		
+		
+		
+		
 		/*
 		 * 시나리오
 		 * DB로부터 모든 부서 검색 후 반환
@@ -23,7 +37,6 @@ public class GetDeptListController extends HttpServlet {
 		 * 	-> deptList 존재 X -> error.jsp에 error메세지 출력
 		 * 							"모든 부서 정보 미존재" / "모든 부서 출력 실패"
 		 */
-		
 		// ?
 		ArrayList<Dept> deptList = null;
 		try {

@@ -16,6 +16,13 @@ import dept.dto.Dept;
 @WebServlet("/updateDept.do")
 public class UpdateDeptController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 검증
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		}
+		
 		/*
 		 * 시나리오
 		 * 1) 화면으로부터 전달받은 3개 정보 유무 판단

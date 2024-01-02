@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_callback</title>
+</head>
+<body>
+    <script>
+        // 콜백 함수
+        // : 다른 함수의 파라미터로 넘겨주는 함수
+        // function callB() {
+        //     console.log('콜백 함수');
+        // }
+
+        // function callA(callback) {
+        //     callback();
+        // }
+
+
+        // callB();
+        // callA(callB);
+
+        // 동기 vs 비동기
+        // 1. 동기 Synchronous : 요청 결과 응답 후, 
+                                // 다른 동작이 실행되는 방식
+
+        // 2. 비동기 Asynchronous : 요청 결과 응답과는 별개로 
+                                // 다음 동작이 실행되는 방식
+
+
+        // 콜백 1
+        // function func(){
+        //     console.log(1);
+        //     setTimeout(() => {
+        //         console.log(2);
+        //     }, 2000);
+        //     console.log(3);
+        // }
+        
+
+        // func();
+
+        // 콜백 2 -> 콜백 지옥(콜백 함수를 이용해서 비동기를 제어하려고 하니 가독성이 떨어짐)
+        // function func() {
+        //     setTimeout(() => {
+        //         console.log(1);
+        //         setTimeout(() => {
+        //             console.log(2);
+        //             setTimeout(() => {
+        //                 console.log(3);
+        //             },3000);
+        //         },5000);
+        //     },1000);
+        // };
+        
+        // func();
+
+        // 콜백 지옥을 해결하고자 -> Promise
+        // 1. 상태 : pending -> resolve() - fulfilled(정상적인 기능 수행 완료), reject() - rejected
+        // 2. 생산자(Producer) - 소비자(Consumer) : then
+        
+        // 생산자
+        // const promise1 = new Promise((resolve, reject) => {
+        //    setTimeout(() => {
+        //         resolve('data1');
+        //    }, 2000);
+        // })
+
+        // const promise2 = new Promise((resolve, reject) => {
+        //    setTimeout(() => {
+        //         resolve('data2');
+        //    }, 1000);
+        // })
+
+        // const promise3 = new Promise((resolve, reject) => {
+        //    setTimeout(() => {
+        //         resolve('data3');
+        //    }, 500);
+        // })
+
+        // 소비자
+        // promise1
+        //     .then(v => console.log(v));
+
+        // promise2
+        //     .then(v => console.log(v));
+
+        // promise3
+        //     .then(v => console.log(v));
+            
+        // 에러 처리
+        // try ~ catch
+        // ex
+        // setTimeout(()=> {
+        //     noSuchElement;
+        // }, 1000);
+
+
+        // ex
+        // function chainMethod() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve(3);
+        //         }, 1000);
+        //     });
+        // }
+
+    </script>
+</body>
+</html>

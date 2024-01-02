@@ -13,7 +13,7 @@
 
 <%@ include file="../layout/header.jsp" %>
 
-<c:if test="${true}">
+<c:if test="${not empty sessionScope.userId}">
 <table align="center" border="0" cellpadding="5" cellspacing="2" width="100%" bordercolordark="white" bordercolorlight="black">
 	<tr>
         <td bgcolor="#336699">
@@ -73,12 +73,12 @@
 <hr>
 <div align=center>
 	<!-- 메인으로 클릭 시, 모든 부서 정보 출력 -->
-	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href=''"></span>
+	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href='login.jsp'"></span>
 	<!-- 부서생성 클릭 시, 새로운 부서 정보 입력 페이지로 이동 -->
 	<span style="font-size:12pt;"><input type="button" value="부서생성" onclick="location.href='insertDeptForm.do'"></span>
 </div>
 </c:if>
-<c:if test="">
+<c:if test="${empty sessionScope.userId}">
 	<div align="center">
   		<span style="font-size:12pt;">로그인이 필요한 서비스입니다.</span>
 	</div>

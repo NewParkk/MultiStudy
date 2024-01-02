@@ -7,7 +7,7 @@
 <title>Login</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/css/layout.css" rel="stylesheet" type="text/css"> 
+<link href="${pageContext.request.contextPath}/css/layout.css" rel="stylesheet" type="text/css"> 
 </head>
 <body>
 
@@ -57,7 +57,7 @@
 	        <td width="450" height="20" align="center">
 	        	<b>
 	        		<span style="font-size:12pt;">
-						<input type="submit" value="로그인">
+						<input type="submit" value="로그인" onclick="location.href='login.do'">
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="reset" value="다시작성">
 					</span>
@@ -68,7 +68,7 @@
 </form>
 <hr>
 <div align=center>
-	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href=''"></span>
+	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href='getDeptList.do'"></span>
 </div>
 
 <%@ include file="../layout/footer.jsp" %>

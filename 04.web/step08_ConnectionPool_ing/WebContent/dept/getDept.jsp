@@ -82,7 +82,7 @@
 	<span style="font-size:12pt;"><input type="button" value="메인으로" onclick="location.href=''"></span>
 	<span style="font-size:12pt;"><input type="button" value="부서생성" onclick="location.href='insertDeptForm.do'"></span>
 	<!-- 부서 삭제 로직 -->
-	<span style="font-size:12pt;"><input type="button" value="부서삭제" onclick=""></span>
+	<span style="font-size:12pt;"><input type="button" value="부서삭제" onclick="deleteDept(${requestScope.dept.deptno})"></span>
 </div>
 
 <%@ include file="../layout/footer.jsp" %>
@@ -93,7 +93,14 @@
 	/* https://www.javascripttutorial.net/javascript-dom/javascript-form/ */
 	
 	// ?
-		
+	function deleteDept(deptno) {
+		let detailForm = document.getElementById('detailForm');
+		detailForm.deptno = deptno;
+		detailForm.action = "deleteDept.do";
+		detailForm.method = "post";
+		detailForm.submit();
+	}
+	
 	
 </script>
 </body>

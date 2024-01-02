@@ -150,7 +150,13 @@ public class DeptDAO {
 		try {
 			con = DBUtil.getConnection();
 			
-			// ?
+			//
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, deptno);
+			result = pstmt.executeUpdate();
+			if(result != 0) {
+				return true;
+			}
 			
 		}finally {
 			DBUtil.close(pstmt, con);
