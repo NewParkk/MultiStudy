@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Dept Update</title>
-<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <%@ include file="../layout/header.jsp" %>
 
 <!-- action, method -->
-<form action="" method="POST">
+<form action="updateDept.do" method="POST">
 	<table align="center" cellpadding="5" cellspacing="1" width="600" border="1">
 	    <tr>
 	        <td width="1220" height="20" colspan="2" bgcolor="#336699">
@@ -33,7 +33,7 @@
 	        	<b>
 	        		<span style="font-size:9pt;">
 	        			<!-- 부서번호는 수정되지 않도록 지정 -->
-	        			<input type="text" name="deptno" size="30" value="" readonly>
+	        			<input type="text" name="deptno" size="30" value="${requestScope.dept.deptno}" readonly>
 	        		</span>
 	        	</b>
 	        </td>
@@ -46,7 +46,7 @@
 	        	<b>
 	        		<span style="font-size:9pt;">
 	        			<!-- 부서명 출력 -->
-	        			<input type=text name="dname" size="30" value="">
+	        			<input type=text name="dname" size="30" value="${requestScope.dept.dname}">
 	        		</span>
 	        	</b>
 	        </td>
@@ -59,7 +59,7 @@
 	        	<b>
 	        		<span style="font-size:9pt;">
 	        			<!-- 부서위치 출력 -->
-	        			<input type=text name="loc" size="30" value="">
+	        			<input type=text name="loc" size="30" value="${requestScope.dept.loc}">
 	        		</span>
 	        	</b>
 	        </td>

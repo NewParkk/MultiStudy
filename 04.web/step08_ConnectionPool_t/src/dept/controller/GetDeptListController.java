@@ -26,7 +26,6 @@ public class GetDeptListController extends HttpServlet {
 		
 		// ?
 		ArrayList<Dept> deptList = null;
-			
 			try {
 				deptList = DeptDAO.getDeptList();
 				if (deptList != null) {

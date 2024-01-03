@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>async</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<h1>Async</h1>
+	<script type="text/javascript">
+		function asyncTest() {
+			// get : params, url?queryString -> getParameter()
+			/* axios.get("http://localhost:8080/step09_async/async", 
+					 	{params: {name: "it"}})
+					.then(response => console.log(response.data)) */
+			// post : getReader()
+			axios.post("http://localhost:8080/step09_async/async",
+						{name: "it", age: 28})
+					.then(response => console.log(response.data))
+					.catch(error => console.error(error));
+		}
+		asyncTest();
+	</script>
+</body>
+</html>

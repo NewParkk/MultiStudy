@@ -7,14 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Dept Detail</title>
-<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <%@ include file="../layout/header.jsp" %>
 
 <!-- action, method -->
-<form action="" method="" name="detailForm" id="detailForm">
+<form action="updateDeptForm.do" method="get" name="detailForm" id="detailForm">
 	<table align="center" cellpadding="5" cellspacing="1" width="600" border="1">
 	    <tr>
 	        <td width="1220" height="20" colspan="2" bgcolor="#336699">
@@ -32,7 +32,7 @@
 	        <td width="450" height="20" align="center">
 	        	<b>
 	        		<span id="deptno" style="font-size:12pt;">
-	        			
+	        			${requestScope.dept.deptno}
 	        		</span>
 	        	</b>
 	        </td>
@@ -44,7 +44,7 @@
 	        <td width="450" height="20" align="center">
 	        	<b>
 	        		<span style="font-size:12pt;">
-	        			
+	        			${requestScope.dept.dname}
 	        		</span>
 	        	</b>
 	        </td>
@@ -56,7 +56,7 @@
 	        <td width="450" height="20" align="center">
 	        	<b>
 	        		<span style="font-size:12pt;">
-	        			
+	        			${requestScope.dept.loc}
 	        		</span>
 	        	</b>
 	        </td>
@@ -69,7 +69,7 @@
 	        	<b>
 	        		<span style="font-size:12pt;">
 	        			<!-- 수정할 부서번호 서버로 전달 -->
-	        			<input type="hidden" name="" value="">
+	        			<input type="hidden" name="deptno" value="${requestScope.dept.deptno}">
 						<input type="submit" value="부서수정">
 					</span>
 				</b>

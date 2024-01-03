@@ -54,7 +54,7 @@
 								부서명 클릭 시, 부서번호로 해당부서 상세정보 출력
 							 -->
 							<b>
-								<a href="getDept.do?deptno=${dept.deptno}">${dept.dname}<a>
+								<a href="getDept.do?deptno=${dept.deptno}">${dept.dname}</a>
 							</b>
 						</span>
 					</p>

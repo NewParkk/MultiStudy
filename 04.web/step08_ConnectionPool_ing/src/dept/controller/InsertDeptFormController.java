@@ -22,10 +22,9 @@ public class InsertDeptFormController extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			return;
 		}
-		String url = "errors/error.jsp";
 		
 		
-		url = "dept/insertDept.jsp";
+		String url = "dept/insertDept.jsp";
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 	

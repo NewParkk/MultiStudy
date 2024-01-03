@@ -47,7 +47,16 @@ public class DeptDAO {
 		try {
 			con = DBUtil.getConnection();
 			
-			// ?
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, deptno);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				dept = new Dept(rset.getInt("deptno"),
+									rset.getString("dname"),
+									rset.getString("loc"));
+			}
 			
 		}finally {
 			DBUtil.close(rset, pstmt, con);
@@ -90,8 +99,17 @@ public class DeptDAO {
 		
 		try {
 			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
 			
-			// ?
+			pstmt.setString(1, dept.getDname());
+			pstmt.setString(2, dept.getLoc());
+			pstmt.setInt(1, dept.getDeptno());
+			
+			result = pstmt.executeUpdate();
+			
+			if (result != 0) {
+				return true;
+			}
 			
 		}finally {
 			DBUtil.close(pstmt, con);

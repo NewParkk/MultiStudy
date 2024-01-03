@@ -33,7 +33,6 @@ public class InsertDeptController extends HttpServlet {
 		
 		String url = "errors/error.jsp";
 		
-		
 	
 		boolean result = false;
 		if (deptno == null) {

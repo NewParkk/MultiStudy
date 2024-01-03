@@ -17,6 +17,9 @@ import dept.dto.Dept;
 public class InsertDeptFormController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// ?
+		String url = "errors/error.jsp";
 		
+		url = "dept/insertDept.jsp";
+		request.getRequestDispatcher(url).forward(request, response);
 	}
 }

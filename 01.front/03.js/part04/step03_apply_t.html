@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>step03_apply</title>
 </head>
 <body>
@@ -11,12 +12,58 @@
     <button id="fetch-dog-api">fetch</button>
     <hr />
     <div id="show-dog-img">
+        <img src="" alt="">
     </div>
     <script>
         // https://dog.ceo/api/breeds/image/random
         // fetch 버튼 클릭시, div#show-dog-img에 random 이미지 출력해보기!
+        // step01 : fetch버튼을 클릭 시 => dog.ceo 서버에 비동기 요청
+        // step02 : 응답 객체 => jpg 반환
+        // step03 : 반환받은 주소 => div 태그에 img js 생성 -> 출력
+
+    //     const fetchBtn = document.getElementById('fetch-dog-api');
+    //     fetchBtn.addEventListener('click', () => {
+    //         asyncAxios()
+    //     });
+
+    
         
-        
+    // function asyncAxios() {
+    //     axios({
+    //         method: 'GET',
+    //         url: 'https://dog.ceo/api/breeds/image/random'
+    //     })
+    //     .then(response => response.data)
+    //     .then(data => { 
+    //             let img = document.createElement('img');
+    //             img.src = data.message;
+    //             document.body.appendChild(img);
+    //     })
+    // }
+
+
+    const fetchBtn = document.getElementById('fetch-dog-api');
+        fetchBtn.addEventListener('click', () => {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    let url = data.message;
+                    const showDiv = document.getElementById('show-dog-img');
+
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.style.width = '200px';
+                    img.style.height = '200px';
+
+                    showDiv.appendChild(img);
+
+                })
+        });
+
+
+
+
+
     </script>
 </body>
 </html>

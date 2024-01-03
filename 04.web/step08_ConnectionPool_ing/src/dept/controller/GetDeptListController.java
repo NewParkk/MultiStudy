@@ -23,13 +23,7 @@ public class GetDeptListController extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			return;
 		}
-		
-		
-		
-		
-		
-		
-		
+			
 		/*
 		 * 시나리오
 		 * DB로부터 모든 부서 검색 후 반환
