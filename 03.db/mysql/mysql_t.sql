@@ -645,8 +645,77 @@ WHERE table_schema = 'SCOTT';
 
 
 SELECT *
-FROM dept;
+FROM dept02;
 
-delete from movie;
+delete from movie;emp01
 
 INSERT INTO dept VALUES(10, 'ACCOUNTING', 'SEOUL');
+
+
+
+
+USE login;
+
+insert into user values("hj", "혜진", 1234);
+insert into user values("dw", "대원", 4567);
+insert into user values("hc", "현철", 7894);
+insert into user values("ws", "원상", 4062);
+commit;
+
+insert into notice_board values();
+SET SQL_SAFE_UPDATES = 0;
+
+select * from notice_board;
+DELETE FROM notice_board;
+
+INSERT INTO notice_board  
+VALUES 
+('공지사항 제목 1', '2024-01-04 10:00:00', '이것은 첫 번째 공지사항 내용입니다.', 'user123');
+INSERT INTO notice_board 
+VALUES 
+(NULL, '공지사항 제목 1', CURRENT_TIMESTAMP, '이것은 첫 번째 공지사항 내용입니다.', 'dw');
+
+ALTER TABLE notice_board AUTO_INCREMENT = 1;
+
+SHOW VARIABLES LIKE 'character_set%';
+SHOW VARIABLES LIKE 'collation%';
+
+SHOW FULL COLUMNS FROM notice_board;
+
+select * from user;
+
+
+
+
+SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM
+     , notice_board.notice_title
+     , notice_board.notice_date
+     , notice_board.user_id
+  FROM notice_board;
+  
+  
+  
+select *
+from (
+SELECT
+	@ROWNUM:=@ROWNUM+1 as board_num
+	, n.notice_id
+    , n.notice_date
+    , n.notice_title
+    , n.notice_content
+    , n.user_id
+FROM notice_board n
+WHERE (@ROWNUM:=0)=0
+) A 
+order by board_num desc;
+
+select *
+from notice_board;
+
+delete from notice_board where notice_id = 4;
+
+
+ALTER TABLE notice_board modify column notice_content varchar(4000);
+
+select *
+from user;
