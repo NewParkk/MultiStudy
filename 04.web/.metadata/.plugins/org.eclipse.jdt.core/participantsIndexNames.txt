@@ -9,6 +9,8 @@ C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3640832745
 \step07_ConnectionPoolBasic_t\src
 C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1310828696.index
 \step08_ConnectionPool_ing\src
+C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2303397000.index
+\servletMini\src
 C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2347508337.index
 \step08_ConnectionPool_t\src
 C:\multi\04.web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1342129913.index

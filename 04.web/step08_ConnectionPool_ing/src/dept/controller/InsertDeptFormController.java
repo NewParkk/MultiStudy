@@ -24,8 +24,9 @@ public class InsertDeptFormController extends HttpServlet {
 		}
 		
 		
+		System.out.println("test");
+//		response.sendRedirect("dept/insertDept.jsp");
 		String url = "dept/insertDept.jsp";
 		request.getRequestDispatcher(url).forward(request, response);
 	}
-	
 }

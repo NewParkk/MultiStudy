@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8005" shutdown="SHUTDOWN">
+ --><Server port="8015" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -162,7 +162,7 @@
 
       <Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\step08_ConnectionPool_ing" path="/step07_ConnectionPool_c" reloadable="true" source="org.eclipse.jst.jee.server:step08_ConnectionPool_ing">
 	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="jdbc/mysql" password="TIGER" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scott?serverTimezone=Asia/Seoul" username="SCOTT"/>							
-</Context></Host>
+</Context><Context docBase="C:\multi\04.web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\servletMini" path="/servletMini" reloadable="true" source="org.eclipse.jst.jee.server:servletMini"/></Host>
     </Engine>
   </Service>
 </Server>
